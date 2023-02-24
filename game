@@ -1,0 +1,53 @@
+import random
+l=['R','P','S']
+print("Enter R for rock, P for paper and S for scissor")  
+
+while True:
+  u=c=0
+  n=int(input("Enter the no.of points for which you want to play:"))
+  while(u<n and c<n):
+    uch=input("Enter your choice:")
+    if uch not in l:
+      print("Invalid choice entered by you")
+      continue
+    cch=random.choice(l)
+    if uch == cch:
+      print("Your choice:",uch,"\tComputer's choice:",cch)
+      print("It is a tie")
+    elif uch=='R':
+      if cch =='S':
+        u+=1
+        print("Your choice:",uch,"\tComputer's choice:",cch)
+        print("Your point:",u,"\tComputer's point:",c)
+      else:
+        c+=1
+        print("Your choice:",uch,"\tComputer's choice:",cch)
+        print("Your point:",u,"\tComputer's point:",c)
+    elif uch=='P':
+      if cch== 'R':
+        u+=1
+        print("Your choice:",uch,"\tComputer's choice:",cch)
+        print("Your point:",u,"\tComputer's point:",c)
+      else:
+        c+=1
+        print("Your choice:",uch,"\tComputer's choice:",cch)
+        print("Your point:",u,"\tComputer's point:",c)
+    elif uch=='S':
+      if cch=='P':
+        u+=1
+        print("Your choice:",uch,"\tComputer's choice:",cch)
+        print("Your point:",u,"\tComputer's point:",c)
+      else:
+        c+=1
+        print("Your choice:",uch,"\tComputer's choice:",cch)
+        print("Your point:",u,"\tComputer's point:",c)
+  if(u>c):
+  
+    print("You win the game ")
+  else:
+    
+    print("You loose the game")
+  x=input("Do you want to play again?Press N to exit and any other key to continue playing: ")
+  if(x.upper()=='N'):
+    break
+  
